@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        header {
+            background: #343238;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 40px;
+            color: #f0f0f0;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: glow 1.5s ease-in-out infinite alternate,
+                      bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                color: #f0f0f0;
+            }
+            to {
+                text-shadow: 2px 2px 15px rgba(255, 105, 180, 0.8);
+                color: #ff69b4;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        main {
+            padding: 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url("img2.jpg") no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 81px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        h2:hover {
+            color: #1e90ff;
+            transform: scale(1.09);
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 30%;
+            aspect-ratio: 1;
+            background-color: rgba(255, 255, 255, 1);
+            padding: 15px;
+            margin: 10px;
+            box-sizing: border-box;
+            overflow: auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 8px; 
+            color: #000; 
+        }
+
+        .box:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .box h1 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .box p {
+            font-size: 14px;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+
+            .boxes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 90%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cognifyz Technologies</h1>
+        <nav>
+            <ul>
+                <li><a href="https://cognifyz.com/services/">Services</a></li>
+                <li><a href="https://cognifyz.com/about-us/">About</a></li>
+                <li><a href="https://cognifyz.com/courses/">Courses</a></li>
+                <li><a href="https://cognifyz.com/contact-us/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <center><h2>Main Content</h2></center>
+            <div class="boxes">
+                <div class="box">
+                    <h1>About Cognifyz</h1>
+                    <p>
+                        Cognifyz Technologies is a technology company that provides
+                        software solutions for businesses. The company offers a range of
+                        products and services, including artificial intelligence (AI),
+                        machine learning (ML), and data analytics tools. One of the main
+                        offerings of Cognifyz Technologies is their AI-powered chatbot
+                        platform, which can be integrated with various communication
+                        channels such as websites, social media, and messaging apps. The
+                        chatbot platform allows businesses to automate their customer
+                        support and engagement, reduce response time, and improve customer
+                        satisfaction. Cognifyz Technologies also provides ML-based
+                        solutions for predictive analytics, fraud detection, and
+                        recommendation engines. These tools help businesses to analyze
+                        large amounts of data and make data-driven decisions in real-time.
+                    </p>
+                </div>
+                <div class="box">
+                    <h1>About Me</h1>
+                    <p>
+                        I am Abhinai, a first-year student at Vardhaman
+                        College of Engineering, specializing in CSE with a focus on
+                        Artificial Intelligence and Machine Learning. Currently, I'm
+                        gaining hands-on experience in front-end development during my
+                        first internship at Cognifyz Technologies, where I'm applying my
+                        skills in HTML, CSS, and JavaScript to real-world projects.
+                    </p>
+                </div>
+                <div class="box">
+                    <h1>About Internship</h1>
+                    <p>
+                        My internship at Cognifyz Technologies has been a highly valuable
+                        experience, where I've gained practical knowledge in HTML, CSS,
+                        and JavaScript. Through various tasks and projects, I've been able
+                        to apply what I've learned, improving my coding skills and
+                        understanding of web development. The hands-on approach has been
+                        incredibly helpful in solidifying my knowledge, and the supportive
+                        environment has further enhanced my growth. This experience has
+                        significantly boosted my confidence in front-end development, and
+                        I'm excited to continue building on this foundation.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Thank You</p>
+    </footer>
+</body>
+</html>
