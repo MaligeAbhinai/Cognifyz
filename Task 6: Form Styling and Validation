@@ -1,0 +1,145 @@
+task6 html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Styling and Validation</title>
+  <link rel="stylesheet" href="task6.css">
+</head>
+<body>
+  <div class="form-container">
+    <form id="registration-form">
+      <h1>Registration Form</h1>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error-message" id="name-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="email-error"></span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="6">
+        <span class="error-message" id="password-error"></span>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <script src="task6.js"></script>
+</body>
+</html>
+
+
+task 6 css
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('img2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .form-container {
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875em;
+    display: block;
+    margin-top: 5px;
+  }
+  
+
+
+
+task6 js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('registration-form');
+    
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      
+      let isValid = true;
+  
+      document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+  
+      const name = document.getElementById('name').value.trim();
+      if (name === '') {
+        isValid = false;
+        document.getElementById('name-error').textContent = 'Name is required.';
+      }
+  
+      const email = document.getElementById('email').value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        isValid = false;
+        document.getElementById('email-error').textContent = 'Invalid email address.';
+      }
+  
+      const password = document.getElementById('password').value;
+      if (password.length < 6) {
+        isValid = false;
+        document.getElementById('password-error').textContent = 'Password must be at least 6 characters long.';
+      }
+  
+      if (isValid) {
+        alert('Form submitted successfully!');
+        form.reset();
+      }
+    });
+  });
